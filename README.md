@@ -10,7 +10,7 @@ generates container image tag, based on github branch/tag name
 # it will set 2 env variables
 # IMAGE_TAG - image tag
 # OVERRIDE_PUSHED_IMAGE - if true, it will not use pushed image tag
-- uses: nxtcoder17/actions/generate-image-tag@v1
+- uses: kloudlite/actions/generate-image-tag@v1
 ```
 
 ### setup-cache-go
@@ -21,7 +21,7 @@ caching for golang modules and build cache
 
 ```yaml
 # it will setup cache/restore with github cache actions
-- uses: nxtcoder17/actions/setup-cache-go@v1
+- uses: kloudlite/actions/setup-cache-go@v1
   with:
     cache_key: "cache-key"
     working_directory: .
@@ -39,7 +39,7 @@ setup docker buildx and login to a container registry
 #   docker_registry (default: "ghcr.io") -
 #   docker_username (required)
 #   docker_password (required)
-- uses: nxtcoder17/actions/setup-docker@v1
+- uses: kloudlite/actions/setup-docker@v1
   with:
     docker_registry: "ghcr.io"
     docker_username: ${{ secrets.DOCKER_USERNAME }}
@@ -58,7 +58,7 @@ setup nix, with [cachix](https://cachix.org/) cache
 #   nix_develop_arguments (default: ".#default") - nix develop extra arguments
 #   cachix_cache_name (required) - cachix cache name
 #   cachix_auth_token (required) - cachix auth token
-- uses: nxtcoder17/actions/setup-nix-cachix@v1
+- uses: kloudlite/actions/setup-nix-cachix@v1
   with:
     flake_lock: "./flake.lock"
     nix_develop_arguments: ".#default"
@@ -76,7 +76,7 @@ setup nix, with github actions cache
 # args:
 #   flake_lock (default: "./flake.lock") - path to flake.lock
 #   nix_develop_arguments (default: ".#default") - nix develop extra arguments
-- uses: nxtcoder17/actions/setup-nix-github@v1
+- uses: kloudlite/actions/setup-nix-github@v1
   with:
     flake_lock: "./flake.lock"
     nix_develop_arguments: ".#default"
